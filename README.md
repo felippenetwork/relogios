@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Relógios
 
-## Getting Started
+Site de catálogo dark-luxury (preto + dourado), com painel admin para editar todo o conteúdo (produtos, depoimentos, FAQ, cores, textos) sem precisar mexer em código.
 
-First, run the development server:
+Stack: **Next.js** (App Router + TypeScript + Tailwind CSS) hospedado na **Vercel**, com **Supabase** para banco de dados, autenticação do admin e armazenamento de imagens.
+
+> Em construção: migração do protótipo estático em [`reference/luxo-catalogo.jsx`](reference/luxo-catalogo.jsx) para esta base real.
+
+## Rodando localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copie `.env.example` para `.env.local` e preencha com as chaves do projeto Supabase (Project Settings → API).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Painel admin
 
-## Learn More
+Acesse `/admin` (login via Supabase Auth — sem senha fixa no código).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Conectado à Vercel via integração com este repositório: todo push em `main` gera deploy de produção automaticamente.

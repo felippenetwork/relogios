@@ -138,6 +138,7 @@ export default async function Home() {
         subtitle={settings.final_cta_subtitle}
         ctaText={settings.final_cta_cta_text}
         scarcity={settings.final_cta_scarcity}
+        disclaimer={`${settings.hero_price_from} · ${settings.stats[0]?.num} ${settings.stats[0]?.label} · ${settings.brand_location}`}
         waLink={wa}
       />
 

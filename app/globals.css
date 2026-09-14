@@ -26,3 +26,108 @@ body {
   background: var(--color-accent-soft);
   color: var(--color-ink);
 }
+
+/* Entry gate: full-screen teaser with a staggered reveal, matching
+   the luxodosrelogios.com.br "curiosity gate" pattern. */
+@keyframes gate-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gate-grow-line {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 60px;
+    opacity: 1;
+  }
+}
+
+.gate-line-top {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent));
+  animation: gate-grow-line 1.2s ease forwards;
+}
+
+.gate-line-bottom {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-accent), transparent);
+  opacity: 0;
+  animation: gate-fade-up 0.7s ease 1.9s forwards;
+}
+
+.gate-eyebrow {
+  opacity: 0;
+  animation: gate-fade-up 0.8s ease 0.6s forwards;
+}
+
+.gate-title {
+  opacity: 0;
+  animation: gate-fade-up 0.9s ease 0.9s forwards;
+}
+
+.gate-sub {
+  opacity: 0;
+  animation: gate-fade-up 0.8s ease 1.1s forwards;
+}
+
+.gate-btn {
+  opacity: 0;
+  animation: gate-fade-up 0.8s ease 1.4s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.gate-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.gate-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.gate-btn:hover {
+  color: var(--color-bg);
+}
+
+.gate-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.gate-note {
+  opacity: 0;
+  animation: gate-fade-up 0.7s ease 1.7s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-line-top,
+  .gate-line-bottom,
+  .gate-eyebrow,
+  .gate-title,
+  .gate-sub,
+  .gate-btn,
+  .gate-note {
+    animation: none;
+    opacity: 1;
+  }
+
+  .gate-line-top {
+    height: 60px;
+  }
+}

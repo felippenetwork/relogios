@@ -39,18 +39,17 @@ export default async function Home() {
   const wa = waLink(settings.whatsapp_number, settings.whatsapp_message);
 
   return (
+    <EntryGate
+      kicker={settings.hero_kicker}
+      brandLocation={settings.brand_location}
+      line1={settings.hero_line1}
+      line2={settings.hero_line2}
+      emphasis={settings.hero_emphasis}
+      priceFrom={settings.hero_price_from}
+      ctaText={settings.hero_cta_text}
+      note={settings.hero_note}
+    >
     <div className="min-h-screen">
-      <EntryGate
-        kicker={settings.hero_kicker}
-        brandLocation={settings.brand_location}
-        line1={settings.hero_line1}
-        line2={settings.hero_line2}
-        emphasis={settings.hero_emphasis}
-        priceFrom={settings.hero_price_from}
-        ctaText={settings.hero_cta_text}
-        note={settings.hero_note}
-      />
-
       <Header brandName={settings.brand_name} brandTagline={settings.brand_tagline} />
 
       <Hero
@@ -143,5 +142,6 @@ export default async function Home() {
 
       <WhatsAppFloatingButton waLink={wa} />
     </div>
+    </EntryGate>
   );
 }

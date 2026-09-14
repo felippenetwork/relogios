@@ -128,8 +128,15 @@ body {
   }
 }
 
-.btn-fixed-glow {
-  animation: float-glow 3s ease-in-out infinite;
+/* Glow only on the desktop pill. On mobile the bar is a full-bleed edge-to-edge
+   strip sitting exactly where iOS Safari's translucent toolbar floats — a
+   continuously animated box-shadow there visibly bleeds through Safari's own
+   chrome, making it look tinted/oversized. Desktop's inset pill doesn't share
+   that edge, so the glow is safe to keep there. */
+@media (min-width: 768px) {
+  .btn-fixed-glow {
+    animation: float-glow 3s ease-in-out infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

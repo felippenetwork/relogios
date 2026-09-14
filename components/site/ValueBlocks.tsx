@@ -9,7 +9,7 @@ export function ValueBlocks({ blocks }: { blocks: ValueBlock[] }) {
             {b.label}
           </div>
           <h3 className="font-serif text-[22px] text-ink m-0 mb-3">{b.head}</h3>
-          <p className="font-sans text-[15px] leading-[1.7] text-muted font-light mb-[18px]">
+          <p className="font-body text-[15px] leading-[1.7] text-muted mb-[18px]">
             {b.body}
           </p>
           {b.bullets.map((x, j) => (

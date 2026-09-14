@@ -14,7 +14,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-faint: var(--accent-faint);
   --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-didact);
+  --font-body: var(--font-garamond);
 }
 
 body {

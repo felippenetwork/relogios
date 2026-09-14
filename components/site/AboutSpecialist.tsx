@@ -25,7 +25,7 @@ export function AboutSpecialist({ kicker, name, role, bio, bullets, imgUrl }: Ab
         <Kicker>{kicker}</Kicker>
         <h2 className="font-serif text-[32px] text-ink m-0 mb-1.5">{name}</h2>
         <div className="font-sans text-[13px] text-accent mb-[18px] tracking-wide">{role}</div>
-        <p className="font-sans text-[15px] leading-[1.7] text-muted font-light mb-5">{bio}</p>
+        <p className="font-body text-[15px] leading-[1.7] text-muted mb-5">{bio}</p>
         {bullets.map((x, i) => (
           <div key={i} className="flex gap-2.5 mb-2 font-sans text-sm text-ink">
             <span className="text-accent">—</span>

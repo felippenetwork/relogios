@@ -15,6 +15,7 @@ type HeroProps = {
   priceFrom: string;
   ctaText: string;
   note: string;
+  scarcity: string;
   waLink: string;
 };
 
@@ -32,6 +33,7 @@ export function Hero({
   priceFrom,
   ctaText,
   note,
+  scarcity,
   waLink,
 }: HeroProps) {
   return (
@@ -75,15 +77,15 @@ export function Hero({
           {line2} <em className="italic text-accent font-medium">{emphasis}</em>
         </h1>
 
-        <p className="font-sans text-[15px] leading-[1.7] text-muted font-light max-w-[480px] mb-6">
+        <p className="font-body text-[15px] leading-[1.7] text-muted max-w-[480px] mb-6">
           {subtitle}
         </p>
 
         {checklist.length > 0 && (
-          <div className="mb-7 flex flex-col gap-2.5">
+          <div className="mb-7 flex flex-col gap-3">
             {checklist.map((item, i) => (
-              <div key={i} className="flex gap-2.5 font-sans text-sm text-ink">
-                <span className="text-accent shrink-0">—</span>
+              <div key={i} className="flex items-start gap-3.5 font-sans text-[13px] tracking-wide text-ink leading-[1.5]">
+                <span className="mt-[5px] w-1.5 h-1.5 rotate-45 bg-accent shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -94,12 +96,18 @@ export function Hero({
           href={waLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-block w-fit bg-accent text-bg font-sans font-semibold text-[13px] tracking-[1.5px] uppercase px-[30px] py-4 rounded-[2px] no-underline cursor-pointer"
+          className="inline-block w-fit bg-accent text-bg font-sans font-bold text-[13px] tracking-[1.5px] uppercase px-[30px] py-4 rounded-[2px] no-underline cursor-pointer"
         >
           {ctaText}
         </a>
         <div className="mt-5 font-sans text-xs text-muted tracking-wide">
           {priceFrom} · {note}
+        </div>
+        <div className="mt-3 inline-flex w-fit items-center gap-2 border border-accent-soft px-3.5 py-[7px]">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <span className="font-sans text-[9px] tracking-[0.2em] text-accent uppercase">
+            {scarcity}
+          </span>
         </div>
       </div>
     </section>

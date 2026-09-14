@@ -41,7 +41,7 @@ export function CatalogGrid({
                 <div className="font-sans text-[8px] text-accent tracking-[0.28em] uppercase mb-2">
                   {p.tag}
                 </div>
-                <div className="font-serif italic text-accent text-[13px]">{p.price}</div>
+                <div className="font-body italic text-accent text-[13px]">{p.price}</div>
               </div>
             </div>
           </a>

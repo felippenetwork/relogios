@@ -10,7 +10,7 @@ export function StatsBar({ stats }: { stats: Stat[] }) {
             className="py-8 px-4 text-center"
             style={i > 0 ? { borderLeft: "1px solid var(--color-line)" } : undefined}
           >
-            <div className="font-serif text-[30px] text-accent font-bold">{s.num}</div>
+            <div className="font-serif text-[30px] text-accent font-normal">{s.num}</div>
             <div className="font-sans text-xs text-muted mt-1.5 tracking-wide">{s.label}</div>
           </div>
         ))}

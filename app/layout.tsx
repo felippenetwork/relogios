@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Didact_Gothic, EB_Garamond } from "next/font/google";
 import { createClient } from "@/lib/supabase/server";
 import { hexToRgba } from "@/lib/color";
 import "./globals.css";
@@ -7,14 +7,21 @@ import "./globals.css";
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const didactGothic = Didact_Gothic({
+  variable: "--font-didact",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: "400",
+});
+
+const ebGaramond = EB_Garamond({
+  variable: "--font-garamond",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 export const viewport: Viewport = {
@@ -51,7 +58,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${playfair.variable} ${inter.variable}`}
+      className={`${playfair.variable} ${didactGothic.variable} ${ebGaramond.variable}`}
       style={
         {
           "--accent": accent,

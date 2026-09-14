@@ -28,7 +28,7 @@ export function FaqAccordion({ items }: { items: FaqItemRow[] }) {
               </span>
             </button>
             {isOpen && (
-              <p className="font-serif text-[16px] leading-[1.8] text-muted px-6 pb-6">{f.answer}</p>
+              <p className="font-body text-[17px] leading-[1.8] text-muted px-6 pb-6">{f.answer}</p>
             )}
           </div>
         );

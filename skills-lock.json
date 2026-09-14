@@ -7,6 +7,12 @@
       "skillPath": "skills/accessibility/SKILL.md",
       "computedHash": "88c64dead9bb55925c7b983f5fd95cfecf30bd8c076fd384cdb17019d1becd87"
     },
+    "better-portuguese": {
+      "source": "rafaelquintanilha/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-portuguese/SKILL.md",
+      "computedHash": "2d0d4c5eee0376fe2fcf17b0846c2acb6ef1fb0a63bc0f9d77e71505d3b1e4e6"
+    },
     "deploy-to-vercel": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",

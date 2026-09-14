@@ -14,6 +14,7 @@ import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloatingButton } from "@/components/site/WhatsAppFloatingButton";
+import { scarcityText } from "@/lib/scarcity";
 
 export const revalidate = 0;
 
@@ -37,6 +38,7 @@ export default async function Home() {
   }
 
   const wa = waLink(settings.whatsapp_number, settings.whatsapp_message);
+  const scarcity = scarcityText(products?.length ?? 0);
 
   return (
     <EntryGate
@@ -62,10 +64,11 @@ export default async function Home() {
         line2={settings.hero_line2}
         emphasis={settings.hero_emphasis}
         subtitle={settings.hero_subtitle}
-        checklist={settings.about_bullets.slice(0, 3)}
+        checklist={settings.about_bullets}
         priceFrom={settings.hero_price_from}
         ctaText={settings.hero_cta_text}
         note={settings.hero_note}
+        scarcity={scarcity}
         waLink={wa}
       />
 
@@ -75,7 +78,7 @@ export default async function Home() {
         <div className="text-center max-w-[620px] mx-auto mb-11">
           <Kicker>{settings.catalog_kicker}</Kicker>
           <SectionTitle title={settings.catalog_title} emphasis={settings.catalog_title_emphasis} />
-          <p className="font-sans text-[15px] leading-[1.7] text-muted font-light mt-4">
+          <p className="font-body text-[15px] leading-[1.7] text-muted mt-4">
             {settings.catalog_subtitle}
           </p>
         </div>
@@ -137,7 +140,7 @@ export default async function Home() {
         titleEmphasis={settings.final_cta_title_emphasis}
         subtitle={settings.final_cta_subtitle}
         ctaText={settings.final_cta_cta_text}
-        scarcity={settings.final_cta_scarcity}
+        scarcity={scarcity}
         disclaimer={`${settings.hero_price_from} · ${settings.stats[0]?.num} ${settings.stats[0]?.label} · ${settings.brand_location}`}
         waLink={wa}
       />

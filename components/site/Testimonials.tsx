@@ -45,7 +45,7 @@ export function Testimonials({ items }: { items: TestimonialRow[] }) {
             <span className="absolute top-2 left-4 font-serif italic text-accent/10 text-[56px] leading-none pointer-events-none">
               &ldquo;
             </span>
-            <p className="relative font-serif italic text-[15px] leading-[1.65] text-ink mt-5">
+            <p className="relative font-body italic text-[18px] leading-[1.65] text-ink mt-5">
               {t.quote_text}
             </p>
             <div className="relative mt-4 text-accent text-[10px] tracking-[0.2em]">★★★★★</div>

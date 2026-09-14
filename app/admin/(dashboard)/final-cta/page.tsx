@@ -6,7 +6,7 @@ export default async function AdminFinalCtaPage() {
   const { data: settings } = await supabase
     .from("site_settings")
     .select(
-      "final_cta_kicker, final_cta_title, final_cta_title_emphasis, final_cta_subtitle, final_cta_cta_text, final_cta_scarcity"
+      "final_cta_kicker, final_cta_title, final_cta_title_emphasis, final_cta_subtitle, final_cta_cta_text"
     )
     .eq("id", 1)
     .single();

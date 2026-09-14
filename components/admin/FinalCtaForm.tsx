@@ -12,7 +12,6 @@ type FinalCtaCopy = {
   final_cta_title_emphasis: string;
   final_cta_subtitle: string;
   final_cta_cta_text: string;
-  final_cta_scarcity: string;
 };
 
 export function FinalCtaForm({ settings }: { settings: FinalCtaCopy }) {
@@ -55,8 +54,10 @@ export function FinalCtaForm({ settings }: { settings: FinalCtaCopy }) {
       <TextArea {...field("final_cta_subtitle")} />
       <Label>Texto do botão</Label>
       <TextInput {...field("final_cta_cta_text")} />
-      <Label>Nota de escassez</Label>
-      <TextInput {...field("final_cta_scarcity")} />
+      <p className="font-sans text-[13px] text-muted mt-3.5 mb-0">
+        A nota &quot;Lote atual: N peças disponíveis&quot; é calculada automaticamente pela
+        quantidade de produtos cadastrados na aba Catálogo.
+      </p>
       <div className="mt-3.5">
         <PrimaryButton type="submit" disabled={isPending}>
           {isPending ? "Salvando…" : "Salvar"}

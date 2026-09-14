@@ -35,7 +35,7 @@ export function FinalCta({
         <em className="italic text-accent font-medium">{titleEmphasis}</em>
       </h2>
 
-      <p className="relative font-serif text-[17px] sm:text-[19px] leading-[1.7] text-muted max-w-[480px] mx-auto mb-8">
+      <p className="relative font-body text-[17px] sm:text-[19px] leading-[1.7] text-muted max-w-[480px] mx-auto mb-8">
         {subtitle}
       </p>
 
@@ -49,7 +49,7 @@ export function FinalCta({
           href={waLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-3 bg-accent text-bg font-sans font-semibold text-[13px] tracking-[1.5px] uppercase px-9 py-[17px] rounded-[2px] no-underline cursor-pointer"
+          className="inline-flex items-center gap-3 bg-accent text-bg font-sans font-bold text-[13px] tracking-[1.5px] uppercase px-9 py-[17px] rounded-[2px] no-underline cursor-pointer"
         >
           <span>{ctaText}</span>
           <span aria-hidden>→</span>

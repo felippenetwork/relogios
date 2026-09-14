@@ -25,7 +25,6 @@ const ebGaramond = EB_Garamond({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0b0b0d",
   colorScheme: "dark",
 };
 

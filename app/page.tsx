@@ -40,26 +40,29 @@ export default async function Home() {
 
   return (
     <EntryGate
-      kicker={settings.hero_kicker}
+      kicker={settings.gate_kicker}
       brandLocation={settings.brand_location}
-      line1={settings.hero_line1}
-      line2={settings.hero_line2}
-      emphasis={settings.hero_emphasis}
-      priceFrom={settings.hero_price_from}
-      ctaText={settings.hero_cta_text}
-      note={settings.hero_note}
+      line1={settings.gate_line1}
+      line2={settings.gate_line2}
+      emphasis={settings.gate_emphasis}
+      priceFrom={settings.gate_price_from}
+      ctaText={settings.gate_cta_text}
+      note={settings.gate_note}
     >
     <div className="min-h-screen">
       <Header brandName={settings.brand_name} brandTagline={settings.brand_tagline} />
 
       <Hero
-        heroImgUrl={settings.hero_img_url}
+        photoUrl={settings.about_img_url}
+        specialistName={settings.about_name}
+        specialistRole={settings.about_role}
         kicker={settings.hero_kicker}
         brandLocation={settings.brand_location}
         line1={settings.hero_line1}
         line2={settings.hero_line2}
         emphasis={settings.hero_emphasis}
         subtitle={settings.hero_subtitle}
+        checklist={settings.about_bullets.slice(0, 3)}
         priceFrom={settings.hero_price_from}
         ctaText={settings.hero_cta_text}
         note={settings.hero_note}

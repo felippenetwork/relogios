@@ -15,6 +15,13 @@ export type SiteSettingsRow = {
   hero_cta_text: string;
   hero_note: string;
   hero_img_url: string | null;
+  gate_kicker: string;
+  gate_line1: string;
+  gate_line2: string;
+  gate_emphasis: string;
+  gate_price_from: string;
+  gate_cta_text: string;
+  gate_note: string;
   stats: Stat[];
   catalog_kicker: string;
   catalog_title: string;

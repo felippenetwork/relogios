@@ -5,16 +5,25 @@ import { updateSiteSettings } from "@/lib/actions/site-settings";
 import { Label, TextInput, TextArea } from "@/components/ui/Field";
 import { PrimaryButton } from "@/components/ui/Button";
 import { SaveStatus } from "@/components/admin/SaveStatus";
-import type { SiteSettingsRow } from "@/lib/supabase/types";
 
-export function SiteForm({ settings }: { settings: SiteSettingsRow }) {
+type GateCopy = {
+  gate_kicker: string;
+  gate_line1: string;
+  gate_line2: string;
+  gate_emphasis: string;
+  gate_price_from: string;
+  gate_cta_text: string;
+  gate_note: string;
+};
+
+export function GateForm({ settings }: { settings: GateCopy }) {
   const [form, setForm] = useState(settings);
   const [status, setStatus] = useState<"idle" | "saved" | "error">("idle");
   const [isPending, startTransition] = useTransition();
 
-  function field<K extends keyof SiteSettingsRow>(key: K) {
+  function field<K extends keyof GateCopy>(key: K) {
     return {
-      value: (form[key] ?? "") as string,
+      value: form[key],
       onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
         setForm((f) => ({ ...f, [key]: e.target.value })),
     };
@@ -30,35 +39,24 @@ export function SiteForm({ settings }: { settings: SiteSettingsRow }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="font-serif text-ink text-xl m-0">Marca</h2>
-      <Label>Nome da marca</Label>
-      <TextInput {...field("brand_name")} />
-      <Label>Slogan (topo)</Label>
-      <TextInput {...field("brand_tagline")} />
-      <Label>Cidade / localização</Label>
-      <TextInput {...field("brand_location")} />
-
-      <div className="h-px bg-line my-5" />
-
-      <h2 className="font-serif text-ink text-xl m-0">Hero (depois do portão)</h2>
+      <h2 className="font-serif text-ink text-xl m-0">Portão de entrada</h2>
       <p className="font-sans text-[13px] text-muted mt-1 mb-0">
-        A foto e o nome vêm da aba &quot;Sobre&quot;. O texto do portão de entrada tem sua própria aba.
+        A primeira tela cheia que aparece antes do site, com o efeito de revelar ao clicar.
       </p>
-      <Label>Kicker do hero</Label>
-      <TextInput {...field("hero_kicker")} />
+      <Label>Texto pequeno (acima do título)</Label>
+      <TextInput {...field("gate_kicker")} />
       <Label>Título — linha 1</Label>
-      <TextInput {...field("hero_line1")} />
+      <TextInput {...field("gate_line1")} />
       <Label>Título — linha 2</Label>
-      <TextInput {...field("hero_line2")} />
+      <TextInput {...field("gate_line2")} />
       <Label>Ênfase (itálico dourado)</Label>
-      <TextInput {...field("hero_emphasis")} />
-      <Label>Subtítulo</Label>
-      <TextArea {...field("hero_subtitle")} />
+      <TextInput {...field("gate_emphasis")} />
+      <Label>Preço de entrada</Label>
+      <TextInput {...field("gate_price_from")} />
       <Label>Texto do botão</Label>
-      <TextInput {...field("hero_cta_text")} />
-      <Label>Preço / nota abaixo do botão</Label>
-      <TextInput {...field("hero_price_from")} />
-      <TextInput {...field("hero_note")} />
+      <TextInput {...field("gate_cta_text")} />
+      <Label>Nota abaixo do botão</Label>
+      <TextArea {...field("gate_note")} />
 
       <div className="mt-5">
         <PrimaryButton type="submit" disabled={isPending}>

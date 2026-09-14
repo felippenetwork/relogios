@@ -4,10 +4,10 @@ export function WhatsAppFloatingButton({ waLink }: { waLink: string }) {
       href={waLink}
       target="_blank"
       rel="noreferrer"
-      aria-label="Falar no WhatsApp"
-      className="fixed bottom-[22px] right-[22px] w-[54px] h-[54px] rounded-full bg-[#25D366] flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,.4)] z-45 no-underline text-2xl focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+      className="btn-fixed-glow fixed inset-x-0 bottom-0 md:inset-x-auto md:right-6 md:bottom-6 z-45 flex items-center justify-center gap-2.5 bg-accent text-bg font-sans font-bold text-[10px] tracking-[0.15em] md:tracking-[0.18em] uppercase no-underline px-5 py-4 md:px-6 md:py-3.5 md:rounded-[2px] border border-accent-soft [padding-bottom:calc(1rem+env(safe-area-inset-bottom))] md:[padding-bottom:0.875rem] focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
     >
-      💬
+      <span aria-hidden>💬</span>
+      <span>Ver peças disponíveis agora</span>
     </a>
   );
 }
